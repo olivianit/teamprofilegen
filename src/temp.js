@@ -69,3 +69,44 @@ function site(data){
     })
     return template
 }
+
+const generateHTML = (data) => {
+    return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../dist/assets/reset.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../dist/assets/style.css">
+        <title>Team Profile Generator</title>
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 jumbotron mb-3 team-heading">
+                        <h1 class="text-center text-light">My Team</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="team-area col-12 d-flex justify-content-center">
+                        ${site(data)}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    </html>
+    `;
+};
+
+// export functions
+module.exports = generateHTML;
