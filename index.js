@@ -26,3 +26,31 @@ const init = () => {
         addEmployees();
     });
 }
+
+const addEmployees = () => {
+    inquirer.prompt(addEmployee).then((employeeAnswers) => {
+        switch (employeeAnswers.addEmployee) {
+            case "Engineer":
+                inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
+                    const engineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
+                    team.push(engineer);
+                    addEmployees();
+                });
+                break;
+            case "Intern":
+                inquirer.prompt(internQuestions).then((internAnswers) => {
+                    const intern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
+                    team.push(intern);
+                    addEmployees();
+                });
+                break;
+            default:
+                // console.log(team);
+                console.log("Your team has been created!");
+                let htmlData = generateHTML(team); 
+                fs.writeFileSync('./dist/index.html', htmlData);
+        }
+    });
+}
+
+init();
