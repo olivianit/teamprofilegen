@@ -51,3 +51,21 @@ const internCard = (intern) => {
     </div>
     `;
 };
+
+function teamCard (employee){
+    switch(employee.getRole()){
+        case "Manager": return managerCard(employee);
+        case "Engineer": return engineerCard(employee);
+        case "Intern": return internCard(employee);
+        default: return "";
+    }
+}
+
+
+function site(data){
+    let template = ``
+    data.forEach(datum =>{
+        template += teamCard(datum)
+    })
+    return template
+}
