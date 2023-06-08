@@ -5,17 +5,9 @@ Module 10 Object-Oriented Programming: Team Profile Generator
 
 ## Description
 
-- User can build a team with the command-line application that prompts questions
-- Questions including team members information: name, id, email, role and so on
-- When finished all questions, a html file will be generated
-- The html website includes team information according to user's input 
-
-## Table of Content
-  * [Usage](#usage)
-  * [Test](#Test)
-  * [Demo](#Demo)
-  * [Technologies](#Technologies)
-  * [Badges](#Badges)
+AS A manager
+I WANT to generate a webpage that displays my team's basic info
+SO THAT I have quick access to their emails and GitHub profiles
   
 
 ## Usage
