@@ -1,0 +1,14 @@
+{
+  "name": "teamprofilegen",
+  "version": "1.0.0",
+  "description": "an application designed to keep track of members on a team",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
